@@ -34,6 +34,14 @@ pip install -r requirements.txt
 
 Start the MCP server with streamable HTTP transport:
 
+### Using uv (recommended)
+
+```bash
+uv run mcp-streamable_http.py
+```
+
+### Using python directly
+
 ```bash
 python mcp-streamable_http.py
 ```
