@@ -86,7 +86,7 @@ The test script output is saved to [mcp-streamable_http.sh.log](mcp-streamable_h
 | URI | Description | Returns |
 |-----|-------------|---------|
 | `greeting://hello` | Simple greeting message | Plain text |
-| `math://constants` | Mathematical constants (Pi, e, Golden ratio, sqrt(2)) | Plain text |
+| `math://constants` | Mathematical constants (&pi;, e, &phi;, &radic;2) | Plain text |
 
 ### Prompts
 
