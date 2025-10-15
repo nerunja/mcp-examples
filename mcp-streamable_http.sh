@@ -147,12 +147,12 @@ if [ "$USE_JQ" = true ]; then
   curl -sS --no-buffer -L \
     -H "Accept: $ACCEPT" -H "Content-Type: $CT" -H "Mcp-Session-Id: $SID" \
     -X POST $S \
-    -d '{"jsonrpc":"2.0","id":8,"method":"prompts/get","params":{"name":"math_problem","arguments":{"operation":"+","num1":10,"num2":20}}}' | grep '^data: ' | sed 's/^data: //' | jq '.'
+    -d '{"jsonrpc":"2.0","id":8,"method":"prompts/get","params":{"name":"math_problem","arguments":{"operation":"+","num1":"10","num2":"20"}}}' | grep '^data: ' | sed 's/^data: //' | jq '.'
 else
   curl -sS --no-buffer -L \
     -H "Accept: $ACCEPT" -H "Content-Type: $CT" -H "Mcp-Session-Id: $SID" \
     -X POST $S \
-    -d '{"jsonrpc":"2.0","id":8,"method":"prompts/get","params":{"name":"math_problem","arguments":{"operation":"+","num1":10,"num2":20}}}'
+    -d '{"jsonrpc":"2.0","id":8,"method":"prompts/get","params":{"name":"math_problem","arguments":{"operation":"+","num1":"10","num2":"20"}}}'
 fi
 echo
 
