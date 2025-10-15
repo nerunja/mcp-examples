@@ -1,0 +1,318 @@
+./mcp-streamable_http.sh 
+
+=== initialize ===
+SID=2e4744c7f7af40ba91cf2aba16844453
+=== notifications/initialized response ===
+
+=== tools/call response ===
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "result": {
+    "content": [
+      {
+        "type": "text",
+        "text": "5"
+      }
+    ],
+    "structuredContent": {
+      "result": 5
+    },
+    "isError": false
+  }
+}
+
+=== tools/list response ===
+{
+  "jsonrpc": "2.0",
+  "id": 3,
+  "result": {
+    "tools": [
+      {
+        "name": "add",
+        "description": "Add 2 integers a and b",
+        "inputSchema": {
+          "properties": {
+            "a": {
+              "type": "integer"
+            },
+            "b": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "a",
+            "b"
+          ],
+          "type": "object"
+        },
+        "outputSchema": {
+          "properties": {
+            "result": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "result"
+          ],
+          "type": "object",
+          "x-fastmcp-wrap-result": true
+        },
+        "_meta": {
+          "_fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "subtract",
+        "description": "Subtract 2 integers a and b",
+        "inputSchema": {
+          "properties": {
+            "a": {
+              "type": "integer"
+            },
+            "b": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "a",
+            "b"
+          ],
+          "type": "object"
+        },
+        "outputSchema": {
+          "properties": {
+            "result": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "result"
+          ],
+          "type": "object",
+          "x-fastmcp-wrap-result": true
+        },
+        "_meta": {
+          "_fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "multiply",
+        "description": "Multiply 2 integers a and b",
+        "inputSchema": {
+          "properties": {
+            "a": {
+              "type": "integer"
+            },
+            "b": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "a",
+            "b"
+          ],
+          "type": "object"
+        },
+        "outputSchema": {
+          "properties": {
+            "result": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "result"
+          ],
+          "type": "object",
+          "x-fastmcp-wrap-result": true
+        },
+        "_meta": {
+          "_fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "divide",
+        "description": "Divide 2 integers a and b",
+        "inputSchema": {
+          "properties": {
+            "a": {
+              "type": "integer"
+            },
+            "b": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "a",
+            "b"
+          ],
+          "type": "object"
+        },
+        "outputSchema": {
+          "properties": {
+            "result": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "result"
+          ],
+          "type": "object",
+          "x-fastmcp-wrap-result": true
+        },
+        "_meta": {
+          "_fastmcp": {
+            "tags": []
+          }
+        }
+      }
+    ]
+  }
+}
+
+=== resources/list response ===
+{
+  "jsonrpc": "2.0",
+  "id": 4,
+  "result": {
+    "resources": [
+      {
+        "name": "get_greeting",
+        "uri": "greeting://hello",
+        "description": "A simple greeting resource",
+        "mimeType": "text/plain",
+        "_meta": {
+          "_fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "get_math_constants",
+        "uri": "math://constants",
+        "description": "Mathematical constants resource",
+        "mimeType": "text/plain",
+        "_meta": {
+          "_fastmcp": {
+            "tags": []
+          }
+        }
+      }
+    ]
+  }
+}
+
+=== resources/read (greeting://hello) response ===
+{
+  "jsonrpc": "2.0",
+  "id": 5,
+  "result": {
+    "contents": [
+      {
+        "uri": "greeting://hello",
+        "mimeType": "text/plain",
+        "text": "Hello from MCP! This is a sample resource."
+      }
+    ]
+  }
+}
+
+=== resources/read (math://constants) response ===
+{
+  "jsonrpc": "2.0",
+  "id": 6,
+  "result": {
+    "contents": [
+      {
+        "uri": "math://constants",
+        "mimeType": "text/plain",
+        "text": "\nCommon Mathematical Constants:\n- Ï€ (Pi): 3.14159265359\n- e (Euler's number): 2.71828182846\n- Ï† (Golden ratio): 1.61803398875\n- âˆš2 (Square root of 2): 1.41421356237\n"
+      }
+    ]
+  }
+}
+
+=== prompts/list response ===
+{
+  "jsonrpc": "2.0",
+  "id": 7,
+  "result": {
+    "prompts": [
+      {
+        "name": "math_problem",
+        "description": "Generate a math problem prompt",
+        "arguments": [
+          {
+            "name": "operation",
+            "required": false
+          },
+          {
+            "name": "num1",
+            "description": "Provide as a JSON string matching the following schema: {\"type\":\"integer\"}",
+            "required": false
+          },
+          {
+            "name": "num2",
+            "description": "Provide as a JSON string matching the following schema: {\"type\":\"integer\"}",
+            "required": false
+          }
+        ],
+        "_meta": {
+          "_fastmcp": {
+            "tags": []
+          }
+        }
+      },
+      {
+        "name": "greeting_prompt",
+        "description": "Generate a personalized greeting prompt",
+        "arguments": [
+          {
+            "name": "name",
+            "required": false
+          }
+        ],
+        "_meta": {
+          "_fastmcp": {
+            "tags": []
+          }
+        }
+      }
+    ]
+  }
+}
+
+=== prompts/get (math_problem) response ===
+{
+  "jsonrpc": "2.0",
+  "id": 8,
+  "error": {
+    "code": -32602,
+    "message": "Invalid request parameters",
+    "data": ""
+  }
+}
+
+=== prompts/get (greeting_prompt) response ===
+{
+  "jsonrpc": "2.0",
+  "id": 9,
+  "result": {
+    "description": "Generate a personalized greeting prompt",
+    "messages": [
+      {
+        "role": "user",
+        "content": {
+          "type": "text",
+          "text": "{\"role\":\"user\",\"content\":{\"type\":\"text\",\"text\":\"Create a friendly and warm greeting for Alice. Make it enthusiastic!\"}}"
+        }
+      }
+    ]
+  }
+}
