@@ -62,4 +62,4 @@ def greeting_prompt(name: str = "World"):
 
 
 if __name__ == "__main__":
-    mcp.run(transport="streamable-http")
+    mcp.run(transport="streamable-http") #, host='localhost', port=8000)
